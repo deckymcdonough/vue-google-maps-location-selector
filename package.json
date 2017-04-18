@@ -1,0 +1,23 @@
+{
+  "name": "vue-google-maps-location-selector",
+  "version": "1.0.0",
+  "description": "A vuejs google maps component that allows latitude and longitude to be selected from a map interface.",
+  "main": "src/GoogleMapsLocationSelector.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deckymcdonough/vue-google-maps-location-selector.git"
+  },
+  "keywords": [
+    "vuejs",
+    "google maps"
+  ],
+  "author": "Declan McDonough <declan@purelethal.com> (https://purelethal.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/deckymcdonough/vue-google-maps-location-selector/issues"
+  },
+  "homepage": "https://github.com/deckymcdonough/vue-google-maps-location-selector#readme"
+}
