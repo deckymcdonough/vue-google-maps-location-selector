@@ -7,26 +7,28 @@ A vuejs google maps component that allows latitude and longitude to be selected 
 ---------------
 ##npm
 ``` sh
-npm install --save vue-stripe-card-form
+npm install --save vue-google-maps-location-selector
 ```
 
-Include the stripe script in the head of your index.html file
+Include the google maps script in the head of your index.html file and add your API key
 ``` html
-<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=[YOUR_API_KEY_HERE]"></script>
 ```
 
-Use the component by passing though your stripe publishable key.
-The `tokenReceived` event will fire as soon as the form recieves a token from the Stripe API.
+Use the component by passing though an initial latitude and longitude.
+The `locationUpdated` event will fire as soon as the maps `center_changed` event fires.
 ``` html
-<stripe-payment @tokenReceived="gotToken" :stripe-key="[YOUR_STRIPE_PUBLISHABLE_KEY_GOES_HERE]">
-</stripe-payment>
+<map-location-selector :latitude=[ADD_INITIAL_LATITUDE] :longitude=[ADD_INITIAL_LONGITUDE]
+  @locationUpdated="locationUpdated">
+</map-location-selector>
 ```
 
-You can get the token in the callback function defined in the `tokenReceived` event.
+You can get the location in the callback function defined in the `locationUpdated` event.
 ``` javascript
 methods:{
-    gotToken(token){
-        // Send your token to the server or whatever
-    }
+  locationUpdated(latlng) {
+    this.latitude = latlng.lat;
+    this.longitude = latlng.lng;
+  }
 }
 ```
